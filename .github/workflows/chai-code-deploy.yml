@@ -37,15 +37,19 @@ jobs:
           username: ubuntu
           key: ${{ secrets.CHAICODE_PRIVATE_KEY }}
           script: |
-            # Stop and remove the existing container if it exists
-            sudo docker stop chaicode-node || true
-            sudo docker rm chaicode-node || true
+            cd /home/ubuntu/chaicodedevops
 
-            # Pull the fresh image from Docker Hub
-            sudo docker pull bajakprashant/chaicode-node
+            # git pull
+            git pull origin main
 
-            # Run the new container on port 80
-            sudo docker run -d --name chaicode-node --restart unless-stopped -p 80:8000 bajakprashant/chaicode-node
-            
-            # Clean up old/unused images
+            # down
+            sudo docker compose down
+
+            # pull image
+            sudo docker compose pull
+
+            # up
+            sudo docker compose up -d
+
+            # clean up the old and unused images
             sudo docker image prune -f
