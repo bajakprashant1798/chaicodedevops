@@ -4,11 +4,11 @@ const app = express()
 const PORT = process.env.PORT ?? 8000
 
 app.get('/', (req, res) => {
-    res.send("Hello World from Express JS v2.1 with docker")
+    res.send("Hello World from Express JS v2.1 with docker ssl with trafik")
 })
 
 app.get('/api', (req, res) => {
-    res.send("Hello World from API v2.1")
+    res.send("Hello World from API v2.1 ssl with trafik")
 })
 
 app.listen(PORT, () => {
