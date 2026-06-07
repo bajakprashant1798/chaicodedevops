@@ -20,6 +20,8 @@ jobs:
           username: ubuntu
           key: ${{ secrets.CHAICODE_PRIVATE_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
             cd /home/ubuntu/chaicodedevops
             git pull
             npm install
