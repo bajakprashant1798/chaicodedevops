@@ -45,7 +45,7 @@ jobs:
             sudo docker pull bajakprashant/chaicode-node
 
             # Run the new container on port 80
-            sudo docker run -d --name chaicode-node --restart unless-stopped -p 80:8000 bajakprashant/chaicode-node:latest
+            sudo docker run -d --name chaicode-node --restart unless-stopped -p 80:8000 bajakprashant/chaicode-node
             
             # Clean up old/unused images
             sudo docker image prune -f
