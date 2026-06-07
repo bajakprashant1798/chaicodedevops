@@ -19,7 +19,7 @@ jobs:
           host: 210.79.128.243
           username: ubuntu
           key: ${{ secrets.CHAICODE_PRIVATE_KEY }}
-          script:
+          script: |
             cd /home/ubuntu/chaicodedevops
             git pull
             npm install
